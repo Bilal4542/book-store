@@ -1,10 +1,10 @@
 import React from "react";
-
+import banner from '../assets/banner.jpg'
 const Banner = () => {
   return (
-    <div className="flex items-center justify-center">
-      <div className="flex justify-center flex-col md:flex-row container px-4 md:px-0">
-        <div className="w-full md:w-[50%] mt-12 md:mt-32">
+    <div className="flex items-center justify-center my-10">
+      <div className="flex justify-between flex-col md:flex-row container px-4 md:px-0">
+        <div className="w-full md:w-[50%] mt-12 md:mt-32 order-2 md:order-1">
           <div className="space-y-12">
             <h1 className="text-4xl font-bold">
               Hello, Welcome here to learn something{" "}
@@ -41,7 +41,9 @@ const Banner = () => {
           </div>
           <button className="btn btn-secondary mt-6">Login</button>
         </div>
-        <div className="w-full md:w-[50%]">hdfleurowrciwtwruiworel</div>
+        <div className="w-full md:w-[50%] order-1   flex items-center justify-center">
+          <img src={banner} className="w-[70%]" alt="" />
+        </div>
       </div>
     </div>
   );
