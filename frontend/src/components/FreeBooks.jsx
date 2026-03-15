@@ -52,7 +52,7 @@ const FreeBooks = () => {
         </div>
         </div>
       </div>
-          <div className="slider-container w-[90%] mx-auto my-10">
+          <div className="slider-container w-[90%] mx-auto my-10 space-x-4">
       <Slider {...settings}>
         {filterData.map((item)=>(
           <BookCard item={item} key={item.id}/>

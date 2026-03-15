@@ -3,12 +3,12 @@ import React from 'react'
 const BookCard = ({item}) => {
   return (
     <>
-    <div className="my-10">
-      <div className="card bg-base-100 w-96 mx-2 shadow-sm hover:scale-105 duration-300 ease-in-out">
+    <div className="my-10 p-2 mx-2 shadow">
+      <div className="card bg-base-100   hover:scale-105 duration-300 ease-in-out">
   <figure>
     <img
       src={item.bookImage}
-      alt="Shoes" className='w-[70%] h-72' />
+      alt="Shoes" className='' />
   </figure>
   <div className="card-body">
     <h2 className="card-title">
