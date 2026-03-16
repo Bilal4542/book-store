@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Login from "./Login";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
-    const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
-  );
-  const element = document.documentElement;
-  useEffect(() => {
-    if (theme === "dark") {
-      element.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      document.body.classList.add("dark");
-    } else {
-      element.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      document.body.classList.remove("dark");
-    }
-  }, [theme]);
+// const [theme, setTheme] = useState(() => {
+//   return localStorage.getItem("theme") || "light";
+// });
+// useEffect(() => {
+//   const root = document.documentElement;
+
+//   if (theme === "dark") {
+//     root.classList.add("dark");
+//     localStorage.setItem("theme", "dark");
+//   } else {
+//     root.classList.remove("dark");
+//     localStorage.setItem("theme", "light");
+//   }
+// }, [theme]);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -52,7 +52,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`flex items-center justify-center fixed top-0 right-0 left-0 z-50 dark:bg-slate-800 dark:text-white ${sticky ? "sticky-navbar shadow-md bg-base-200 duration-200 ease-in-out" : ""}`}>
+        className={`flex items-center justify-center fixed top-0 right-0 left-0 z-50  ${sticky ? "sticky-navbar shadow-md bg-base-200 duration-200 ease-in-out" : ""}`}>
         <div className=" flex justify-between items-center container">
           <div className="navbar">
             <div className="navbar-start">
@@ -157,9 +157,10 @@ const Navbar = () => {
                 </label>
               </div>
               <div className="">
-                <a className="bg-black px-3 py-2 hover:bg-slate-800 duration-300 cursor-pointer text-white rounded-md">
+                <a className="bg-black px-3 py-2 hover:bg-slate-800 duration-300 cursor-pointer text-white rounded-md" onClick={()=>document.getElementById('my_modal_3').showModal()}>
                   Login
                 </a>
+                <Login/>
               </div>
             </div>
           </div>
