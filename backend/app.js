@@ -2,12 +2,15 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import bookRoute from './router/book.router.js'
+import userRoute from './router/user.router.js'
 import cors from 'cors'
 
 dotenv.config()
 
 const app = express()
 app.use(cors())
+app.use(express.json())
+
 const PORT = process.env.PORT || 4001
 const URI  = process.env.MONGODBURI
 
@@ -23,6 +26,7 @@ mongoose.connect(URI).then(()=>{
 })
 
 app.use('/book', bookRoute)
+app.use('/user', userRoute)
 
 app.listen(PORT, ()=>{
   console.log('Server is running on port ', PORT)
